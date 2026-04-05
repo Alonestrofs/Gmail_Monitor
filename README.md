@@ -16,7 +16,7 @@ Small FastAPI service that connects multiple Gmail mailboxes and emits a webhook
 2. Enable the Gmail API.
 3. Create an OAuth client for a web application.
 4. Set the redirect URI to `http://localhost:8000/auth/callback` or your deployed callback URL.
-5. Copy `.env.example` to `.env` and fill in the OAuth values plus your webhook URL.
+5. Add `.env` to `./app` and fill in the OAuth values plus your webhook URL.
 6. Install dependencies:
 
 ```bash
@@ -28,7 +28,10 @@ pip install -r requirements.txt
 ```bash
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
-
+If you are using Powershell, you may need to use this command instead
+```bash
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+```
 ## Connect mailboxes
 
 Open this URL in a browser:
